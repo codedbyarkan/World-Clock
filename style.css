@@ -1,0 +1,40 @@
+/* Remove Bootstrap SVG caret */
+.dropdown-toggle::after {
+    background-image: none !important;
+}
+
+/* Adjust minimum height of the last card here */
+.card-tall {
+    min-height: 230px;
+    /* change this value as you like */
+}
+
+/* Replace with solid white caret that won't change color */
+.dropdown-toggle::after {
+    content: "";
+    display: inline-block;
+    margin-left: .255em;
+    vertical-align: .255em;
+
+    border-top: .3em solid #ffffff;
+    /* white arrow */
+    border-right: .3em solid transparent;
+    border-bottom: 0;
+    border-left: .3em solid transparent;
+}
+
+/* Prevent hover/active/focus from changing it */
+.dropdown-toggle:hover::after,
+.dropdown-toggle:focus::after,
+.dropdown-toggle:active::after,
+.show>.dropdown-toggle::after {
+    border-top-color: #ffffff !important;
+}
+
+
+.link-secondary:focus,
+.link-secondary:hover {
+    color: white !important;
+    -webkit-text-decoration-color: RGBA(86, 94, 100, var(--bs-link-underline-opacity, 1)) !important;
+    text-decoration-color: RGBA(86, 94, 100, var(--bs-link-underline-opacity, 1)) !important;
+}
